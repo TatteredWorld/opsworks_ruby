@@ -19,10 +19,10 @@ server {
   proxy_hide_header X-Powered-By;
   server_tokens off;
 
-  client_max_body_size <%= @out[:client_max_body_size] || '1m' %>;
+  client_max_body_size <%= @out[:client_max_body_size] || '25m' %>;
   client_body_timeout <%= @out[:client_body_timeout] || '12' %>;
   client_header_timeout <%= @out[:client_header_timeout] || '12' %>;
-  keepalive_timeout <%= @out[:keepalive_timeout] || '15' %>;
+  keepalive_timeout <%= @out[:keepalive_timeout] || '30' %>;
   send_timeout <%= @out[:send_timeout] || '10' %>;
 
 <% if @application[:enable_ssl] && @out[:force_ssl] %>
